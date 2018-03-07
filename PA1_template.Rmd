@@ -8,7 +8,7 @@ output:
 knitr::opts_chunk$set(fig.width=12, fig.height=9, fig.path='Fig/',
 echo = TRUE, warning = FALSE, message = FALSE)
 ```
-###Loading the data is done through the following code:
+### Loading the data is done through the following code:
 ```{r}
 data <- read.csv("activity.csv", stringsAsFactors = FALSE)
 data$date<-as.Date(data$date)
@@ -32,7 +32,7 @@ steps_median <- round(median(agg_data$Steps),2)
 cat(sprintf("Here is the mean: %s\n", steps_mean))
 cat(sprintf("Here is the median: %s\n", steps_median))
 ```
-###What is the average daily activity pattern
+### What is the average daily activity pattern
 1.  Make a time series plot of Interval and Average Steps taken 
 ```{r}
 grouped_data <- aggregate(data$steps~data$interval, FUN = mean)
@@ -68,7 +68,7 @@ a
 
 ```
 
-*As seen below under my replacment process, the mean and media have changed - both have increased.
+* As seen below under my replacment process, the mean and media have changed - both have increased.
 ```{r}
 steps_mean2 <- round(mean(sample_new$Steps),2)
 steps_median2 <- round(median(sample_new$Steps),2)
