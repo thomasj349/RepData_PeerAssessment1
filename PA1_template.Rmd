@@ -1,5 +1,9 @@
-#RepData_PeerAssessment1
-##submitted by:  Joseph Thomas
+---
+title: RepData_PeerAssessment1
+output:
+  html_document:
+    keep md: yes
+---
 
 ###Loading the data is done through the following code:
 ```{r}
