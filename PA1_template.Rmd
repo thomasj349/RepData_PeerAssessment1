@@ -74,7 +74,7 @@ steps_median2 <- round(median(sample_new$Steps),2)
 cat(sprintf("Here is the mean: %s\n", steps_mean2))
 cat(sprintf("Here is the median: %s\n", steps_median2))
 ```
-###Are there differences in activity patterns between weekdays and weekends?
+### Are there differences in activity patterns between weekdays and weekends?
 1.  Create a new factor variable in the dataset with two levels - "weekday" and "weekend"
 ```{r}
 library(dplyr)
