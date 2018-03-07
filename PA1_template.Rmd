@@ -1,5 +1,5 @@
 ---
-title: RepData_PeerAssessment1
+title: "RepData_PeerAssessment1"
 output:
   html_document:
     keep md: yes
