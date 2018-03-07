@@ -89,4 +89,6 @@ library(lattice)
 xyplot(steps~interval|Day, data = try_agg, layout = c(1,2), type = "l", xlab = "Number of Steps", ylab = "Interval")
 ```
 
-            
+---
+output: md_document
+---
