@@ -6,7 +6,7 @@ output:
 ---
 ```{r global_options, include = FALSE}
 knitr::opts_chunk$set(fig.width=12, fig.height=9, fig.path='Fig/',
-echo = TRUE, warning = FALSE, message = FALSE)
+                      echo = TRUE, warning = FALSE, message = FALSE)
 ```
 ### Loading the data is done through the following code:
 ```{r}
@@ -17,7 +17,7 @@ complete_data <- data[complete.cases(data),]
 
 ### What is the mean total number of steps:
 1. Calculate the total number of steps taken per day and plot via Histogram.
-```{r}
+```{r histogram_1}
 agg_data <- aggregate(complete_data$steps, by=list(complete_data$date), sum, na.rm = TRUE)
 colnames(agg_data) <- c("Date", "Steps")
 hist(agg_data$Steps, main = "Total Number of Steps per Day", xlab = "Steps per Day")
@@ -33,7 +33,7 @@ cat(sprintf("Here is the median: %s\n", steps_median))
 ```
 ### What is the average daily activity pattern
 1.  Make a time series plot of Interval and Average Steps taken 
-```{r}
+```{r time_series_plot}
 grouped_data <- aggregate(data$steps~data$interval, FUN = mean)
 plot(grouped_data$`data$interval`, grouped_data$`data$steps`, type = "l", xlab = "Time", 
       ylab = "Number of Steps", main = "When are the steps taken ")
@@ -59,7 +59,7 @@ new_data$steps[is.na(data$steps)] <- mean(data$steps, na.rm  = TRUE)
 ```
 
 3.  Make a histogram of total steps per day
-```{r}
+```{r histogram_2}
 sample_new <- aggregate(new_data$steps, by=list(new_data$date), sum, na.rm = TRUE)
 colnames(sample_new) <- c("Date", "Steps")
 hist(sample_new$Steps, main = "Total Number of Steps per Day", xlab = "Steps per Day")
@@ -85,7 +85,7 @@ try_agg <- aggregate(steps~interval+Day, try_data, mean)
 ```
 
 2.  Make a Panel plot
-```{r}
+```{r xyplot}
 library(lattice)
 xyplot(steps~interval|Day, data = try_agg, layout = c(1,2), type = "l", xlab = "Number of Steps", ylab = "Interval")
 ```
