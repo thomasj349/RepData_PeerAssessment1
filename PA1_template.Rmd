@@ -4,7 +4,10 @@ output:
   html_document:
     keep md: yes
 ---
-
+```{r global_options, include = FALSE}
+knitr::opts_chunk$set(fig.width=12, fig.height=9, fig.path='Fig/',
+echo = TRUE, warning = FALSE, message = FALSE)
+```
 ###Loading the data is done through the following code:
 ```{r}
 data <- read.csv("activity.csv", stringsAsFactors = FALSE)
